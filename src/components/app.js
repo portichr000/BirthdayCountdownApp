@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Picker from './picker';
 import Button from './button';
-import Clock from './clock'
+import Clock from './clock';
+import changeDate from './changeDate';
 
  export default class App extends Component {
   
@@ -17,7 +18,7 @@ import Clock from './clock'
    if(this.state.active) {
     return [
       <Clock />,
-      
+      changeDate('Change Date', () => this.setState({active: false}))
     ]
    }else {
      return Button('Generate Countdown', () => this.setState({active: true}))
@@ -44,6 +45,7 @@ import Clock from './clock'
           
           <Picker/>
           { this.renderItems() }
+          
        </div>
      );
    }
