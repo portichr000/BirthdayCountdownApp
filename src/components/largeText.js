@@ -2,7 +2,7 @@ import React from 'react';
 
 const Largetext = (text) => {
   return(
-    <div className="large-text">
+    <div key={2} className="large-text">
       {text}
     </div>
   )
