@@ -71,7 +71,7 @@ export default class App extends Component {
 
   this.timer = setInterval(function() {
 
-   var now = today.getTime();
+   var now = moment().toDate().getTime();
 
    var distance = countDownDate - now;
 
@@ -113,7 +113,7 @@ export default class App extends Component {
     <Clock key ={0} timeRemaining={this.state.timeRemaining}/>,
     changeDate('Change Date', () => this.setState({ active: false })),
     LargeText(this.getBirthDate(this.state.startDate.toDate())),
-    <label key ={3} className="grid__remaining">Remaining until you turn {this.state.age} </label>
+    <label key ={3} className="grid__remaining">Remaining until you turn {this.state.age + 1} </label>
    ]
   }
   else {
